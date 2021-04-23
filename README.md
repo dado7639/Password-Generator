@@ -10,7 +10,7 @@ I was able to generate a random password. This required the creation of multiple
 
 ## Screen Shot Image of Wesbite
 
-![Screenshot](assets/screenshot.png)
+![Screenshot](assets/images/screenshot.png)
 
 ## Link to Website
 
