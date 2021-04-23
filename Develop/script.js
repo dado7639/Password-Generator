@@ -100,7 +100,7 @@ function generatePrefs() {
     numeric: numeric,
     special: special,
   };
-  // if we didnt return fucntion would not spit out info
+  // if we didnt use return fucntion would not spit out info
   return prefs;
 }
 
@@ -140,6 +140,7 @@ function generatePassword() {
   // join method to make createdPass array a single string
   // could not get join method to work... used toString() to make string from createdPass array
   var createdPassString = createdPass.toString();
+  // return createdPassString value so generatePassword() function has value
   return createdPassString;
 }
 
