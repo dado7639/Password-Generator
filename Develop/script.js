@@ -138,8 +138,9 @@ function generatePassword() {
   }
 
   // join method to make createdPass array a single string
-  // createdPass.join("");
-  console.log(createdPass.join(""));
+  // could not get join method to work... used toString() to make string from createdPass array
+  var createdPassString = createdPass.toString();
+  return createdPassString;
 }
 
 // Write password to the #password input
