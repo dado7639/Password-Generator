@@ -1,63 +1,9 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-var lowerArray = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
-var upperArray = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
-var numArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialArray = ["%", "*", "$", "!", "@", "#", "^", "&"];
+
+var upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerString = "abcedfghijklmnopqrstuvwxyz";
+var specialString = "!@#$%^&*";
+var numberString = "123456789";
 
 // generatePrefs
 function generatePrefs() {
@@ -115,30 +61,29 @@ function randomPicker(anyArray) {
 function generatePassword() {
   var userPrefs = generatePrefs();
   // define varibale that holds created password
-  var createdPass = [];
+  var createdPass = "";
   // creates array with all the possible characters can use based on users answer... from top
   var prefArray = [];
 
   if (userPrefs.lowercase === true) {
-    prefArray = prefArray + lowerArray;
+    prefArray = prefArray + lowerString;
   }
   if (userPrefs.uppercase === true) {
-    prefArray = prefArray + upperArray;
+    prefArray = prefArray + upperString;
   }
   if (userPrefs.numeric === true) {
-    prefArray = prefArray + numArray;
+    prefArray = prefArray + numberString;
   }
   if (userPrefs.special === true) {
-    prefArray = prefArray + specialArray;
+    prefArray = prefArray + specialString;
   }
+
   // loop over using prefarray length number of times
   for (var i = 0; i < userPrefs.length; i++) {
     var chosenItem = randomPicker(prefArray);
     createdPass = createdPass + chosenItem;
   }
 
-  // join method to make createdPass array a single string
-  // could not get join method to work... used toString() to make string from createdPass array
   var createdPassString = createdPass.toString();
   // return createdPassString value so generatePassword() function has value
   return createdPassString;
